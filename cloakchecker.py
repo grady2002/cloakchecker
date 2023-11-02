@@ -33,19 +33,10 @@ try :
 except Exception as e :
 	print(f"An error occured : {e}")
 
-def print_all() -> None:
-		# print(f"LAN (WiFi) IP : {VARS['lan']}")
-		print(f"WAN (Public) IP : {VARS['wan']}")
-		print(f"WAN Location (Might be inaccurate) : {VARS['location']}")
-		# print(f"Current MAC : {VARS['current_mac']}")
-		# print(f"Permanent (Original) MAC : {VARS['permanent_mac']}")
-		# if (VARS['current_mac'] == VARS['permanent_mac']) :
-			# print(f"use 'sudo macchanger --mac=NEW_MAC {INTERFACE}' to change mac address temporarily")
-
 def myipinfo() -> None :
-	print_all()
-	system("rm tmp")
+    system("clear")
+    for key, value in VARS.items() :
+        print(f"{key} : {value}")
+    system("rm tmp")
 
-
-system("clear")
 myipinfo()
