@@ -39,11 +39,11 @@ def sanitize(string: str, split_character: chr or str, filter_index: int) -> str
 	return string.split(split_character)[filter_index]
 
 VARS = {
-	# "lan": get_info(command=system(LAN_IP_COMMAND), filter_index = 1),
+	"lan": get_info(command=system(LAN_IP_COMMAND), filter_index = 1),
 	"wan": sanitize(string=get_info(command=system(WAN_IP_COMMAND), filter_index=2), split_character='<', filter_index=0),
-	"location": f"{get_wan_location()['city']}, {get_wan_location()['country']}" 
-	# "current_mac": macs()[0],
-	# "permanent_mac": macs()[1],
+	"location": f"{get_wan_location()['city']}, {get_wan_location()['country']}" ,
+	"current_mac": macs()[0],
+	"permanent_mac": macs()[1],
 }
 
 def myipinfo() -> None :
